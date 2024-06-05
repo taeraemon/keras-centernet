@@ -1,3 +1,39 @@
+### Readme tykim
+```
+This repo is forked.
+
+
+# setup
+git clone "thisrepo".git
+python3 -m venv env
+source env/bin/activate
+pip install Cython==0.29.7
+pip install numpy==1.21.6
+pip install -r requirements.txt
+
+# demo
+PYTHONPATH=. python keras_centernet/bin/ctdet_image.py --fn assets/demo.jpg --inres 512,512
+PYTHONPATH=. python keras_centernet/bin/ctdet_video.py --inres 512,512 --video assets/fighters.mp4
+result goes to output/
+
+# tested env
+ubuntu 20.04
+python 3.7.17 (pyenv)
+i9-12900KF, A6000(48GB), 32GB
+cuda_11.2 -> checked with "nvcc --version"
+maybe no cudnn
+
+# pretrained models
+https://github.com/xingyizhou/CenterNet/blob/master/readme/MODEL_ZOO.md
+
+# tmi
+there can be several warnings when demo runs. It's OK
+image or video should be larger than 512x512
+my env take ~40ms per frame
+```
+
+
+
 # Keras-CenterNet
 
 Keras port of CenterNet (https://arxiv.org/abs/1904.07850)
